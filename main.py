@@ -5,7 +5,8 @@ import pandas as pd
 import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error, r2_score
+import joblib
+from sklearn.model_selection import RandomizedSearchCV
 
 #### loading the dataset
 df = pd.read_csv('dataset/kc_final.csv')
@@ -90,7 +91,6 @@ X_test['yr_built'] = np.log(X_test['yr_built'] + 1)
 #  0.8832142185785542
 
 ##### doing the tuning 
-from sklearn.model_selection import RandomizedSearchCV
 param_grid = {
     'n_estimators': [100, 150, 200, 250],
     'max_depth': [8, 10, 15, 20],
@@ -102,7 +102,7 @@ random_search.fit(X_train, Y_train)
 best_forest = random_search.best_estimator_
 print("This is the current model", best_forest)
 # 2. Use this trained model to score your test data
-test_score = best_forest.score(X_test, Y_test)
 
-print("The score on the test dataset after tuning:", test_score)
-# print("The score on the training dataset after tuning:\n", best_forest.score(X_train, Y_train))
+# Save the model to a file
+joblib.dump(best_forest, 'house_price_model.joblib')
+print("Model saved successfully!")
