@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-1=h0fxdyt6!9n6bue)q#vo&qvj3+1-q3t_i2s_r5n5&#e%x5z4
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://house-pricing-prediction-fv7l.onrender.com"]
+ALLOWED_HOSTS = ["house-pricing-prediction-fv7l.onrender.com"]
 
 
 # Application definition
