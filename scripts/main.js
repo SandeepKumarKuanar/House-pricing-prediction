@@ -28,7 +28,7 @@ form.addEventListener('submit', function (event) {
     };
 
     // 2. Send the data to your Django API
-    fetch('http://127.0.0.1:8000/api/predict/', {
+    fetch('https://house-pricing-prediction-fv7l.onrender.com', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
