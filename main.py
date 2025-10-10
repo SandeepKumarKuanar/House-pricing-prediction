@@ -6,6 +6,7 @@ import seaborn as sns
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 import joblib
+import json
 from sklearn.model_selection import RandomizedSearchCV
 
 #### loading the dataset
@@ -66,6 +67,15 @@ training_data = training_data.drop(columns=['view', 'condition', 'grade'], axis=
 X_train = training_data.drop(columns=['price'])
 Y_train = training_data['price']
 
+# Assuming 'X_train' is your final, processed training DataFrame
+# This should be right before you call forest.fit(X_train, Y_train)
+training_columns = X_train.columns.tolist()
+
+# Save the list of columns to a JSON file
+with open('training_columns.json', 'w') as f:
+    json.dump(training_columns, f)
+
+print("Training columns saved to training_columns.json")
 ### I will go with the default random forest regressor model, without hyperparameter tuning, as it won't perform well on small datasets
 forest = RandomForestRegressor()
 # training the model

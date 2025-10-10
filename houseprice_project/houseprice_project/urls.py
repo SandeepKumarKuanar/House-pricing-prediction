@@ -20,5 +20,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('api/', include('predictor.urls')), # Route requests to our app
+    path('api/', include('houseprice_project.predictor.urls')), # Route requests to our app
 ]

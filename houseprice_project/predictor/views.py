@@ -2,7 +2,7 @@
 import os
 import joblib
 from django.conf import settings
-import joblib
+import json
 import numpy as np
 import pandas as pd
 from rest_framework.decorators import api_view
@@ -10,9 +10,12 @@ from rest_framework.response import Response
 
 # Load the model when the server starts
 MODEL_PATH = os.path.join(settings.BASE_DIR, 'predictor', 'ml_models', 'house_price_model.joblib')
+COLUMNS_PATH = os.path.join(settings.BASE_DIR, 'predictor', 'ml_models', 'training_columns.json')
 
 # MODEL_PATH = 'houseprice_project/predictor/ml_models/house_price_model.joblib'
 model = joblib.load(MODEL_PATH)
+with open(COLUMNS_PATH, 'r') as f:
+    training_columns = json.load(f)
 
 @api_view(['POST'])
 def predict_price(request):
@@ -23,8 +26,6 @@ def predict_price(request):
         # 1. Get data from the request
         data = request.data
         
-        # 2. **CRITICAL**: Preprocess the input data in the EXACT same way as your training data
-        # Example: Convert to a DataFrame to keep track of columns
         input_df = pd.DataFrame([data])
 
         # Apply log transforms (use the same columns as in training)
@@ -38,17 +39,15 @@ def predict_price(request):
         # Drop the original columns
         input_df = input_df.drop(columns=['view', 'condition', 'grade'])
 
-        # Ensure the column order matches the training data
-        # You should save and load the training columns for this
-        # training_columns = ['bedrooms', 'bathrooms', ... 'living_quality']
-        # input_df = input_df[training_columns]
-
+        ## reordering the columns to match training columns
+        input_df = input_df[training_columns]
         # 3. Make prediction
         prediction = model.predict(input_df)
         
         # The output of predict is a numpy array, so we get the first element
         predicted_price = prediction[0]
 
+        
         # 4. Return the response
         return Response({'predicted_price': predicted_price})
 
