@@ -7,3 +7,5 @@ pandas==2.3.3
 scikit_learn==1.7.2
 seaborn==0.13.2
 django-cors-headers==4.4.0
+gunicorn
+
