@@ -1,0 +1,8 @@
+Django==5.2.7
+djangorestframework==3.16.1
+joblib==1.4.2
+matplotlib==3.10.7
+numpy==2.3.3
+pandas==2.3.3
+scikit_learn==1.7.2
+seaborn==0.13.2
