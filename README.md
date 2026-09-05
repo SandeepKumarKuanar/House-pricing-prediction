@@ -8,7 +8,7 @@
 
 An end-to-end machine learning web app that predicts house prices in **King County, Washington** from a trained **Random Forest** model, served through a **Django REST API** with a clean, dependency-free web frontend.
 
-> 🔗 **Live demo:** <a href="https://house-pricing-prediction-fv7l.onrender.com" target="_blank">house-pricing-prediction-fv7l.onrender.com</a>
+> 🔗 **Live demo:** <a href="https://sandeepkumarkuanar.github.io/House-pricing-prediction/" target="_blank">On GitHub Pages</a>
 
 ---
 
@@ -64,15 +64,11 @@ Everything is wired together so a user can hit the live URL, enter a few house d
 
 | Lat–Long price map | Feature distribution after log transform |
 |-------------------|-------------------------------------------|
-| ![Lat-long price map](plots/lat-long-mapping.png) | ![Features after logs](plots/features-after-logs.png) |
+| ![Lat-long price map](docs/lat-long-mapping.png) | ![Features after logs](docs/features-after-logs.png) |
 
-**Live web UI:** *drop a screenshot of the deployed site here*
+**Live web UI:**
 
-<!--
-  TODO: capture a screenshot of https://house-pricing-prediction-fv7l.onrender.com
-  and save it as docs/screenshot.png, then uncomment the line below:
-  ![Web UI](docs/screenshot.png)
--->
+![Web UI](docs/landing.png)
 
 ---
 
@@ -142,6 +138,10 @@ House-pricing-prediction/
 │   └── kc_final.csv                 # King County house sales data
 ├── plots/                           # EDA / feature engineering visualizations
 │   ├── features-after-logs.png
+│   └── lat-long-mapping.png
+├── docs/                            # Screenshots for the README
+│   ├── features-after-logs.png
+│   ├── landing.png
 │   └── lat-long-mapping.png
 ├── houseprice_project/              # Django project + app
 │   ├── db.sqlite3
@@ -329,6 +329,8 @@ From the Render dashboard:
 
 - GitHub: [SandeepKumarKuanar](https://github.com/SandeepKumarKuanar)
 - Contact: [sandeepkumarkuanar.pythonanywhere.com/contact](https://sandeepkumarkuanar.pythonanywhere.com/contact)
+- X: [@kuanar_sandeep](https://x.com/kuanar_sandeep)
+- Email: `kuanarsandeepkumar@gmail.com`
 
 ---
 
