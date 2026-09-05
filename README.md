@@ -64,7 +64,7 @@ Everything is wired together so a user can hit the live URL, enter a few house d
 
 | Lat–Long price map | Feature distribution after log transform |
 |:------------------:|:------------------------------------------:|
-| <img src="docs/lat-long-mapping.png" alt="Lat-long price map" width="400"> | <img src="docs/features-after-logs.png" alt="Features after logs" width="400"> |
+| <img src="docs/lat-long-mapping.png" alt="Lat-long price map" width="600"> | <img src="docs/features-after-logs.png" alt="Features after logs" width="600"> |
 
 **Live web UI:**
 
