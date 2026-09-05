@@ -17,8 +17,10 @@ Including another URLconf
 
 from django.contrib import admin
 from django.urls import path, include
+from houseprice_project.predictor.views import health_check
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('api/', include('houseprice_project.predictor.urls')), # Route requests to our app
+    path('health/', health_check, name='health_check'),  # Keep-alive ping endpoint
 ]
