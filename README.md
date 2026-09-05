@@ -63,12 +63,12 @@ Everything is wired together so a user can hit the live URL, enter a few house d
 *Ground-truth prices mapped by latitude/longitude (left) and the distribution of engineered features after log transforms (right).*
 
 | Lat–Long price map | Feature distribution after log transform |
-|-------------------|-------------------------------------------|
-| ![Lat-long price map](docs/lat-long-mapping.png) | ![Features after logs](docs/features-after-logs.png) |
+|:------------------:|:------------------------------------------:|
+| <img src="docs/lat-long-mapping.png" alt="Lat-long price map" width="400"> | <img src="docs/features-after-logs.png" alt="Features after logs" width="400"> |
 
 **Live web UI:**
 
-![Web UI](docs/landing.png)
+<img src="docs/landing.png" alt="Web UI" width="800">
 
 ---
 
