@@ -251,12 +251,11 @@ Predicts a house price from feature JSON.
 ```
 
 **Example:**
-```
-```
+```bash
 curl -X POST https://house-pricing-prediction-fv7l.onrender.com/api/predict/ \\
   -H "Content-Type: application/json" \\
   -d '{"sqft_living": 1340, "bedrooms": 3, "bathrooms": 1.5, "sqft_lot": 7912, "floors": 1.5, "waterfront": 0, "view": 0, "condition": 3, "grade": 7, "sqft_above": 1340, "sqft_basement": 0, "yr_built": 1955, "yr_renovated": 0, "zipcode": 98125, "lat": 47.721, "long": -122.319, "sqft_living15": 1690, "sqft_lot15": 7639}'
-```
+
 ```
 
 **Responses:**
